@@ -10,10 +10,24 @@ import SafariServices
 
 class SafariExtensionViewController: SFSafariExtensionViewController {
     
+    
+    @IBOutlet weak var applyButtonLabel: NSButtonCell!
+    
+    
     static let shared: SafariExtensionViewController = {
         let shared = SafariExtensionViewController()
-        shared.preferredContentSize = NSSize(width:320, height:240)
+        shared.preferredContentSize = NSSize(width:220, height:140)
         return shared
     }()
 
+    
+    
+    
+    
+    @IBAction func applyNowButtonPressed(_ sender: NSButtonCell) {
+        
+    }
+    
+    
+    
 }

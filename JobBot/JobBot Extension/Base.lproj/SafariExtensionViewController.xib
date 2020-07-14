@@ -1,30 +1,76 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModule="JobBot_Extension" customModuleProvider="target">
             <connections>
+                <outlet property="applyButtonLabel" destination="Iql-Lw-PoH" id="gkh-L1-11N"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vwT-Xx-Aiz"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="330" height="119"/>
+            <rect key="frame" x="0.0" y="0.0" width="342" height="228"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-aV-wGF">
-                    <rect key="frame" x="103" y="82" width="124" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-aV-wGF">
+                    <rect key="frame" x="116" y="191" width="110" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="DPK-Pz-0kS"/>
+                    </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="JobBot Extension" id="2Ec-kd-q2K">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="83" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tja-SV-y9S">
+                    <rect key="frame" x="20" y="136" width="302" height="25"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJG-R2-FX4">
+                            <rect key="frame" x="-2" y="9" width="131" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Auto apply to all jobs" id="vsn-jT-jV0">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ycu-cD-GPx">
+                            <rect key="frame" x="204" y="-3" width="104" height="32"/>
+                            <buttonCell key="cell" type="push" title="Apply now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Iql-Lw-PoH">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <connections>
+                                    <action selector="applyNowButtonPressed:" target="-2" id="mUg-WV-kkj"/>
+                                </connections>
+                            </buttonCell>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="Ynp-46-NbU"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
             </subviews>
+            <constraints>
+                <constraint firstItem="tja-SV-y9S" firstAttribute="top" secondItem="4Iy-aV-wGF" secondAttribute="bottom" constant="30" id="OEk-o1-cq4"/>
+                <constraint firstItem="4Iy-aV-wGF" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="Q1X-8H-4kS"/>
+                <constraint firstAttribute="trailing" secondItem="tja-SV-y9S" secondAttribute="trailing" constant="20" id="Rh5-yl-cqS"/>
+                <constraint firstItem="tja-SV-y9S" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="hvp-UR-gDy"/>
+                <constraint firstItem="4Iy-aV-wGF" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="tNz-ML-lyT"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="208"/>
         </customView>
     </objects>
 </document>

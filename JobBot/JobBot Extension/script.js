@@ -9,6 +9,8 @@ if (location.hostname == 'www.ziprecruiter.com') {
   console.log('Wrong site this script only works at: www.ziprecruiter.com');
 }
 
+safari.self.addEventListener("apply", applyToJobs)
+
 //Function to click on the apply buttons
 function applyToJobs() {
   let buttonsArray = document.getElementsByClassName('job_apply');
